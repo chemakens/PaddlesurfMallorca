@@ -1,132 +1,242 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Paddle Surf Mallorca</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0; padding: 0;
-            background-color: #f0f8ff;
-            color: #333;
-        }
-        header {
-            background-color: #0077b6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin: 20px;
-        }
-        nav button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            border: none;
-            background-color: #0077b6;
-            color: white;
-            cursor: pointer;
-        }
-        nav button:hover {
-            background-color: #023e8a;
-        }
-        section {
-            padding: 20px;
-        }
-        .imagenes {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .imagenes img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-        }
-        .precio {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        footer {
-            background-color: #0077b6;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jose María Paddle Surf</title>
+  <meta name="description" content="Private paddle surf lessons in Mallorca with local guide Jose María." />
+  <meta name="keywords" content="paddle surf Mallorca, paddle surf lessons, paddle surf guide, water sports Mallorca" />
+  <meta name="author" content="Jose María" />
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 15px; background: #f0f9ff; color: #333; }
+    h2 { color: #0288d1; margin-top: 40px; }
+    ul { list-style-type: disc; margin-left: 20px; }
+    footer { text-align: center; padding: 20px 10px; background: #e0f0ff; font-size: 0.9rem; color: #555; margin-top: 40px; }
+    nav { text-align: right; margin-bottom: 15px; }
+    nav button { margin-left: 5px; cursor: pointer; background: #0288d1; color: white; border: none; padding: 5px 10px; border-radius: 4px; }
+    nav button:hover { background: #026ca0; }
+    figure img { max-width: 100%; height: auto; border-radius: 8px; }
+    figure { margin: 20px 0; text-align: center; }
+    figure figcaption { font-style: italic; font-size: 0.9rem; color: #555; margin-top: 5px; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1 id="titulo">Paddle Surf Mallorca</h1>
-    </header>
 
-    <nav>
-        <button onclick="cambiarIdioma('es')">Español</button>
-        <button onclick="cambiarIdioma('en')">English</button>
-        <button onclick="cambiarIdioma('de')">Deutsch</button>
-    </nav>
+<nav>
+  <span>Language:</span>
+  <button onclick="changeLang('en')">English</button>
+  <button onclick="changeLang('es')">Español</button>
+  <button onclick="changeLang('de')">Deutsch</button>
+</nav>
 
-    <section>
-        <p id="descripcion">Enjoy an unforgettable sea experience with a local guide.</p>
-        <p class="precio" id="precio">Price per session: 40€</p>
-        <div class="imagenes">
-            <img src="imagenes/foto1.jpg" alt="Foto paddle surf 1" />
-            <img src="imagenes/foto2.jpg" alt="Foto paddle surf 2" />
-            <img src="imagenes/foto3.jpg" alt="Foto paddle surf 3" />
-        </div>
-        <p>
-            <a id="contacto" href="https://wa.me/34600000000" target="_blank">Contact me via WhatsApp</a>
-        </p>
-    </section>
+<header>
+  <figure>
+    <img src="imagenes/jose.jpg" alt="Jose María Paddle Surf" style="width: 25%; max-height: 400px; object-fit: cover;" />
+    <figcaption id="captionGuide">Jose María - Paddle Surf Guide</figcaption>
+  </figure>
+</header>
 
-    <footer>© 2025 Paddle Surf Mallorca - José María</footer>
+<section id="about">
+  <h2 id="titleAbout">About Me</h2>
+  <p id="textAbout">Hello! I'm Jose María, a local nurse and passionate paddle surf guide based in Mallorca. I offer private paddle surf lessons tailored to all levels. Join me to explore Mallorca’s stunning coastline, hidden coves, and enjoy a safe, fun adventure on the water.</p>
+</section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const traducciones = {
-                es: {
-                    titulo: "Paddle Surf Mallorca",
-                    descripcion: "Disfruta de una experiencia inolvidable en el mar con un guía local.",
-                    precio: "Precio por sesión: 40€",
-                    contacto: "Contáctame por WhatsApp",
-                },
-                en: {
-                    titulo: "Paddle Surf Mallorca",
-                    descripcion: "Enjoy an unforgettable sea experience with a local guide.",
-                    precio: "Price per session: 40€",
-                    contacto: "Contact me via WhatsApp",
-                },
-                de: {
-                    titulo: "Paddle Surf Mallorca",
-                    descripcion: "Genieße ein unvergessliches Erlebnis auf dem Meer mit einem lokalen Guide.",
-                    precio: "Preis pro Sitzung: 40€",
-                    contacto: "Kontaktiere mich per WhatsApp",
-                },
-            };
+<section id="services">
+  <h2 id="titleServices">Private Paddle Surf Classes</h2>
+  <p><strong id="priceLabel">Price:</strong> <span id="priceValue">35 €/hour per person</span></p>
+  <ul id="servicesList">
+    <li>Personalized instruction</li>
+    <li>Mallorca’s best paddle spots</li>
+    <li>Safety, technique and fun</li>
+    <li>Snorkeling and water options</li>
+    <li>Flexible schedule and small groups</li>
+  </ul>
+</section>
 
-            // Función para cambiar idioma y guardar preferencia
-            window.cambiarIdioma = function (idioma) {
-                const t = traducciones[idioma];
-                document.getElementById("titulo").textContent = t.titulo;
-                document.getElementById("descripcion").textContent = t.descripcion;
-                document.getElementById("precio").textContent = t.precio;
-                document.getElementById("contacto").textContent = t.contacto;
-                // Guardar idioma en localStorage para persistencia
-                localStorage.setItem("idiomaSeleccionado", idioma);
-            };
+<section id="gallery">
+  <h2 id="titleGallery">Gallery</h2>
 
-            // Al cargar, cargar idioma guardado o inglés por defecto
-            const idiomaGuardado = localStorage.getItem("idiomaSeleccionado");
-            if (idiomaGuardado && traducciones[idiomaGuardado]) {
-                cambiarIdioma(idiomaGuardado);
-            } else {
-                cambiarIdioma("en"); // idioma base inglés
-            }
-        });
-    </script>
+  <figure>
+    <img src="imagenes/foto1.jpg" alt="Paddle Surf Mallorca" />
+    <figcaption id="caption1">Paddle Surf JosemariaMallorca</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto2.jpg" alt="Calm Cove" />
+    <figcaption id="caption2">Calm Cove</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto3.jpg" alt="Paddle Adventure 1" />
+    <figcaption id="caption3">Paddle Adventure 1</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto4.jpg" alt="Crystal Waters" />
+    <figcaption id="caption4">Crystal Waters</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto5.jpg" alt="Hidden Cove" />
+    <figcaption id="caption5">Transport to the coves 🚗</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto6.jpg" alt="Cave Exploration" />
+    <figcaption id="caption6">Cave Exploration</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto7.jpg" alt="Coastal Paddle" />
+    <figcaption id="caption7">Coastal Paddle</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto8.jpg" alt="Sunset Paddle" />
+    <figcaption id="caption8">Sunset Paddle</figcaption>
+  </figure>
+
+  <figure>
+    <img src="imagenes/foto9.jpg" alt="Fun with Group" />
+    <figcaption id="caption9">Calm, wave-free waters – perfect for paddle surfing! 🏄‍♂️🌊😊</figcaption>
+  </figure>
+</section>
+
+<section id="contact">
+  <h2 id="titleContact">Contact Me</h2>
+  <p>Email: <a href="mailto:chemakens@gmail.com" id="emailLink">chemakens@gmail.com</a></p>
+  <p>WhatsApp: <a href="https://wa.me/34678835494" id="whatsappLink">+34 678835494</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Jose María Paddle Surf | Mallorca, Spain
+</footer>
+
+<script>
+  const texts = {
+    en: {
+      captionGuide: "Jose María - Paddle Surf Guide",
+      titleAbout: "About Me",
+      textAbout: "Hello! I'm Jose María, a local nurse and passionate paddle surf guide based in Mallorca. I offer private paddle surf lessons tailored to all levels. Join me to explore Mallorca’s stunning coastline, hidden coves, and enjoy a safe, fun adventure on the water.",
+      titleServices: "Private Paddle Surf Classes",
+      priceLabel: "Price:",
+      priceValue: "35 €/hour per person",
+      servicesList: [
+        "Personalized instruction",
+        "Mallorca’s best paddle spots",
+        "Safety, technique and fun",
+        "Snorkeling and water options",
+        "Flexible schedule and small groups"
+      ],
+      titleGallery: "Gallery",
+      caption1: "Paddle Surf JosemariaMallorca",
+      caption2: "Calm Cove",
+      caption3: "Paddle Adventure 1",
+      caption4: "Crystal Waters",
+      caption5: "Transport to the coves 🚗",
+      caption6: "Cave Exploration",
+      caption7: "Coastal Paddle",
+      caption8: "Sunset Paddle",
+      caption9: "Calm, wave-free waters – perfect for paddle surfing! 🏄‍♂️🌊😊",
+      titleContact: "Contact Me",
+      emailLink: "chemakens@gmail.com",
+      whatsappLink: "+34 678835494"
+    },
+    es: {
+      captionGuide: "Jose María - Guía de Paddle Surf",
+      titleAbout: "Sobre mí",
+      textAbout: "¡Hola! Soy Jose María, enfermero local y guía apasionado de paddle surf en Mallorca. Ofrezco clases privadas adaptadas a todos los niveles. Ven a explorar la impresionante costa de Mallorca, calas escondidas, y disfruta de una aventura segura y divertida en el agua.",
+      titleServices: "Clases privadas de Paddle Surf",
+      priceLabel: "Precio:",
+      priceValue: "35 €/hora por persona",
+      servicesList: [
+        "Instrucción personalizada",
+        "Los mejores spots de paddle en Mallorca",
+        "Seguridad, técnica y diversión",
+        "Opciones de snorkel y actividades acuáticas",
+        "Horarios flexibles y grupos pequeños"
+      ],
+      titleGallery: "Galería",
+      caption1: "Paddle Surf JosemariaMallorca",
+      caption2: "Calma en la cala",
+      caption3: "Aventura de paddle 1",
+      caption4: "Aguas cristalinas",
+      caption5: "Transporte a las calas 🚗",
+      caption6: "Exploración de cuevas",
+      caption7: "Paddle por la costa",
+      caption8: "Paddle al atardecer",
+      caption9: "Aguas tranquilas y sin olas, perfectas para paddle surf 🏄‍♂️🌊😊",
+      titleContact: "Contáctame",
+      emailLink: "chemakens@gmail.com",
+      whatsappLink: "+34 678835494"
+    },
+    de: {
+      captionGuide: "Jose María - Paddle Surf Guide",
+      titleAbout: "Über mich",
+      textAbout: "Hallo! Ich bin Jose María, ein lokaler Krankenpfleger und leidenschaftlicher Paddle-Surf-Guide auf Mallorca. Ich biete private Paddle-Surf-Kurse für alle Niveaus an. Komm mit mir, um Mallorcas atemberaubende Küste, versteckte Buchten zu erkunden und ein sicheres, spaßiges Abenteuer auf dem Wasser zu genießen.",
+      titleServices: "Private Paddle-Surf-Kurse",
+      priceLabel: "Preis:",
+      priceValue: "35 €/Stunde pro Person",
+      servicesList: [
+        "Personalisierter Unterricht",
+        "Mallorcas beste Paddle-Spots",
+        "Sicherheit, Technik und Spaß",
+        "Schnorcheln und Wasseroptionen",
+        "Flexibler Zeitplan und kleine Gruppen"
+      ],
+      titleGallery: "Galerie",
+      caption1: "Paddle Surf JosemariaMallorca",
+      caption2: "Ruhige Bucht",
+      caption3: "Paddle-Abenteuer 1",
+      caption4: "Kristallklares Wasser",
+      caption5: "Transport zu den Buchten 🚗",
+      caption6: "Höhlenforschung",
+      caption7: "Küstenpaddeln",
+      caption8: "Sonnenuntergangspaddeln",
+      caption9: "Ruhiges, wellenfreies Wasser – perfekt zum Paddle Surfen! 🏄‍♂️🌊😊",
+      titleContact: "Kontakt",
+      emailLink: "chemakens@gmail.com",
+      whatsappLink: "+34 678835494"
+    }
+  };
+
+  function changeLang(lang) {
+    const t = texts[lang];
+
+    document.getElementById('captionGuide').textContent = t.captionGuide;
+    document.getElementById('titleAbout').textContent = t.titleAbout;
+    document.getElementById('textAbout').textContent = t.textAbout;
+    document.getElementById('titleServices').textContent = t.titleServices;
+    document.getElementById('priceLabel').textContent = t.priceLabel;
+    document.getElementById('priceValue').textContent = t.priceValue;
+
+    const servicesList = document.getElementById('servicesList');
+    servicesList.innerHTML = '';
+    t.servicesList.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      servicesList.appendChild(li);
+    });
+
+    document.getElementById('titleGallery').textContent = t.titleGallery;
+    document.getElementById('caption1').textContent = t.caption1;
+    document.getElementById('caption2').textContent = t.caption2;
+    document.getElementById('caption3').textContent = t.caption3;
+    document.getElementById('caption4').textContent = t.caption4;
+    document.getElementById('caption5').textContent = t.caption5;
+    document.getElementById('caption6').textContent = t.caption6;
+    document.getElementById('caption7').textContent = t.caption7;
+    document.getElementById('caption8').textContent = t.caption8;
+    document.getElementById('caption9').textContent = t.caption9;
+    document.getElementById('titleContact').textContent = t.titleContact;
+    document.getElementById('emailLink').textContent = t.emailLink;
+    document.getElementById('whatsappLink').textContent = t.whatsappLink;
+  }
+
+  // Load default language (English)
+  document.addEventListener('DOMContentLoaded', () => changeLang('en'));
+</script>
+
 </body>
 </html>
