@@ -1,110 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jose María Paddle Surf</title>
-  <meta name="description" content="Private paddle surf lessons in Mallorca with local guide Jose María." />
-  <meta name="keywords" content="paddle surf Mallorca, paddle surf lessons, paddle surf guide, water sports Mallorca" />
-  <meta name="author" content="Jose María" />
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 15px; background: #f0f9ff; color: #333; }
-    h2 { color: #0288d1; margin-top: 40px; }
-    ul { list-style-type: disc; margin-left: 20px; }
-    footer { text-align: center; padding: 20px 10px; background: #e0f0ff; font-size: 0.9rem; color: #555; margin-top: 40px; }
-    nav { text-align: right; margin-bottom: 15px; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paddle Surf Mallorca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px;
+        }
+        nav button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #0077b6;
+            color: white;
+            cursor: pointer;
+        }
+        nav button:hover {
+            background-color: #023e8a;
+        }
+        section {
+            padding: 20px;
+        }
+        .imagenes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .imagenes img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .precio {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1 id="titulo">Paddle Surf Mallorca</h1>
+    </header>
 
-<nav>
-  <a href="/es/index.html">Español</a> | 
-  <a href="/index.html">English</a> | 
-  <a href="/de/index.html">Deutsch</a>
-</nav>
+    <nav>
+        <button onclick="cambiarIdioma('es')">Español</button>
+        <button onclick="cambiarIdioma('en')">English</button>
+        <button onclick="cambiarIdioma('de')">Deutsch</button>
+    </nav>
 
-<header>
-  <figure>
-    <img src="imagenes/jose.jpg" alt="Jose María Paddle Surf" style="width: 25%; max-height: 400px; object-fit: cover;" />
-    <figcaption style="text-align: center; font-size: 1.1em; margin-top: 8px;">Jose María - Paddle Surf Guide</figcaption>
-  </figure>
-</header>
+    <section>
+        <p id="descripcion">Enjoy an unforgettable sea experience with a local guide.</p>
+        <p class="precio" id="precio">Price per session: 40€</p>
+        <div class="imagenes">
+            <img src="imagenes/foto1.jpg" alt="Foto paddle surf 1" />
+            <img src="imagenes/foto2.jpg" alt="Foto paddle surf 2" />
+            <img src="imagenes/foto3.jpg" alt="Foto paddle surf 3" />
+        </div>
+        <p>
+            <a id="contacto" href="https://wa.me/34600000000" target="_blank">Contact me via WhatsApp</a>
+        </p>
+    </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hello! I'm Jose María, a local nurse and passionate paddle surf guide based in Mallorca. I offer private paddle surf lessons tailored to all levels. Join me to explore Mallorca’s stunning coastline, hidden coves, and enjoy a safe, fun adventure on the water.</p>
-</section>
+    <footer>© 2025 Paddle Surf Mallorca - José María</footer>
 
-<section id="services">
-  <h2>Private Paddle Surf Classes</h2>
-  <p><strong>Price:</strong> 35 €/hour per person</p>
-  <ul>
-    <li>Personalized instruction</li>
-    <li>Mallorca’s best paddle spots</li>
-    <li>Safety, technique and fun</li>
-    <li>Snorkeling and water options</li>
-    <li>Flexible schedule and small groups</li>
-  </ul>
-</section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const traducciones = {
+                es: {
+                    titulo: "Paddle Surf Mallorca",
+                    descripcion: "Disfruta de una experiencia inolvidable en el mar con un guía local.",
+                    precio: "Precio por sesión: 40€",
+                    contacto: "Contáctame por WhatsApp",
+                },
+                en: {
+                    titulo: "Paddle Surf Mallorca",
+                    descripcion: "Enjoy an unforgettable sea experience with a local guide.",
+                    precio: "Price per session: 40€",
+                    contacto: "Contact me via WhatsApp",
+                },
+                de: {
+                    titulo: "Paddle Surf Mallorca",
+                    descripcion: "Genieße ein unvergessliches Erlebnis auf dem Meer mit einem lokalen Guide.",
+                    precio: "Preis pro Sitzung: 40€",
+                    contacto: "Kontaktiere mich per WhatsApp",
+                },
+            };
 
-<section id="gallery">
-  <h2>Gallery</h2>
-  
-  <figure>
-    <img src="imagenes/foto1.jpg" alt="Paddle Surf Mallorca" width="400" />
-    <figcaption>Paddle Surf JosemariaMallorca</figcaption>
-  </figure>
+            // Función para cambiar idioma y guardar preferencia
+            window.cambiarIdioma = function (idioma) {
+                const t = traducciones[idioma];
+                document.getElementById("titulo").textContent = t.titulo;
+                document.getElementById("descripcion").textContent = t.descripcion;
+                document.getElementById("precio").textContent = t.precio;
+                document.getElementById("contacto").textContent = t.contacto;
+                // Guardar idioma en localStorage para persistencia
+                localStorage.setItem("idiomaSeleccionado", idioma);
+            };
 
-  <figure>
-    <img src="imagenes/foto2.jpg" alt="Calm Cove" width="400" />
-    <figcaption>Calm Cove</figcaption>
-  </figure>
-
-  <figure>
-    <img src="imagenes/foto3.jpg" alt="Paddle Adventure 1" width="400" />
-    <figcaption>Paddle Adventure 1</figcaption>
-  </figure>
-
-  <figure>
-    <img src="imagenes/foto4.jpg" alt="Crystal Waters" width="400" />
-    <figcaption>Crystal Waters</figcaption>
-  </figure>
-
-  <figure>
-    <img src="imagenes/foto5.jpg" alt="Hidden Cove" width="400" />
-    <figcaption>Transport to the coves 🚗</figcaption>
-  </figure>
-
-  <figure>
-    <img src="imagenes/foto6.jpg" alt="Cave Exploration" width="400" />
-    <figcaption>Cave Exploration</figcaption>
-  </figure>
-
-  <figure>
-    <img src="imagenes/foto7.jpg" alt="Coastal Paddle" width="400" />
-    <figcaption>Coastal Paddle</figcaption>
-  </figure>
-
-  <figure>
-    <img src="imagenes/foto8.jpg" alt="Sunset Paddle" width="400" />
-    <figcaption>Sunset Paddle</figcaption>
-  </figure>
-
-  <figure>
-    <img src="imagenes/foto9.jpg" alt="Fun with Group" width="400" />
-    <figcaption>Calm, wave-free waters – perfect for paddle surfing! 🏄‍♂️🌊😊</figcaption>
-  </figure>
-</section>
-
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:chemakens@gmail.com">chemakens@gmail.com</a></p>
-  <p>WhatsApp: <a href="https://wa.me/34678835494">+34 678835494</a></p>
-</section>
-
-<footer>
-  &copy; 2025 Jose María Paddle Surf | Mallorca, Spain
-</footer>
-
+            // Al cargar, cargar idioma guardado o inglés por defecto
+            const idiomaGuardado = localStorage.getItem("idiomaSeleccionado");
+            if (idiomaGuardado && traducciones[idiomaGuardado]) {
+                cambiarIdioma(idiomaGuardado);
+            } else {
+                cambiarIdioma("en"); // idioma base inglés
+            }
+        });
+    </script>
 </body>
 </html>
